@@ -1,0 +1,31 @@
+{
+  "name": "raid-commander-server",
+  "version": "0.1.0",
+  "description": "Servidor backend para Raid Commander: Tarkov Web. Maneja raids, enemigos, mapas y lógica del juego.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "express",
+    "game",
+    "raid-commander",
+    "tarkov",
+    "web",
+    "server"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.1",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
