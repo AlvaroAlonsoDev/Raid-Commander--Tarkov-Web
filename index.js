@@ -1,22 +1,23 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
+import express from 'express';
+import { connectDB } from './config/db.js';
+import { router } from './routes/index.js';
+import dotenv from 'dotenv';
 
-dotenv.config(); // Cargar variables del .env
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Conectar a MongoDB
-mongoose.connect(process.env.DB_URI)
-    .then(() => console.log('✅ Conectado a MongoDB'))
-    .catch(err => console.error('❌ Error al conectar a MongoDB:', err));
+connectDB();
 
-
-// Middleware para parsear JSON
+// Middlewares
 app.use(express.json());
 
-// Ruta de prueba
+// Rutas
+app.use(router);
+
+// Ruta raíz
 app.get('/', (req, res) => {
     res.send('¡Servidor y base de datos funcionando!');
 });
